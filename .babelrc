@@ -1,0 +1,39 @@
+{
+  "presets": [
+    "next/babel",
+    "@babel/preset-env",
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "babel-plugin-transform-import-meta",
+    [
+      "@babel/plugin-transform-modules-commonjs",
+      {
+        "allowTopLevelThis": true
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "remark-html": "./node_modules/remark-html",
+          "remark-smartypants": "./plugins/remark-smartypants",
+          "remark-header-custom-ids" :"./plugins/remark-header-custom-ids"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ]
+}
